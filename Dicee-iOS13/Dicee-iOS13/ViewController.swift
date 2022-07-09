@@ -16,24 +16,23 @@ class ViewController: UIViewController {
 
     // Interface Builder Action/Function
     @IBAction func rollButtonPressed(_ sender: UIButton) {
-        diceImageView1.image = [
+        
+        let diceArray = [
             UIImage(named: "DiceOne"),
             UIImage(named: "DiceTwo"),
             UIImage(named: "DiceThree"),
             UIImage(named: "DiceFour"),
             UIImage(named: "DiceFive"),
             UIImage(named: "DiceSix")
-        ][Int.random(in: 0...5)]
+        ]
+        // let randomDiceNum = [Int.random(in: 0...5)]
         
-        diceImageView2.image = [
-            UIImage(named: "DiceOne"),
-            UIImage(named: "DiceTwo"),
-            UIImage(named: "DiceThree"),
-            UIImage(named: "DiceFour"),
-            UIImage(named: "DiceFive"),
-            UIImage(named: "DiceSix")
-        ][Int.random(in: 0...5)]
+        diceImageView1.image = diceArray.randomElement()!!
         
+        diceImageView2.image = diceArray.randomElement()!!
+        
+        // another way to write it
+        // diceImageView2.image = dictArray[Int.random(in: 0...5)]
     }
 }
 
