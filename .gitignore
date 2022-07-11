@@ -34,6 +34,7 @@ DerivedData/
 *.png
 *.jpeg
 *.pdf
+*.wav
 
 ## Playgrounds
 timeline.xctimeline
