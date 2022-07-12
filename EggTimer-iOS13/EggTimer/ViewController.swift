@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class ViewController: UIViewController {
     
@@ -22,16 +23,13 @@ class ViewController: UIViewController {
     // var secondsRemaining = 60
     var totalTime = 0
     var secondsPassed = 0
-    
-    
+    var player: AVAudioPlayer!
     var timer = Timer()
     
     @IBAction func hardnessSelected(_ sender: UIButton) {
                 
         timer.invalidate()
-        
         let hardness = sender.currentTitle!
-        
         totalTime = eggTime[hardness]!
         
         // reset progress bar when another button is pressed
@@ -58,6 +56,10 @@ class ViewController: UIViewController {
             //stop timer
             timer.invalidate()
             displayMessage.text = "Done!"
+                        
+            let url = Bundle.main.url(forResource: "alarm_sound", withExtension: "mp3")
+                        player = try! AVAudioPlayer(contentsOf: url!)
+                        player.play()
         }
     }
     
