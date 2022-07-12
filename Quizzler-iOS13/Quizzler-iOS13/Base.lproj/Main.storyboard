@@ -87,7 +87,7 @@
                     <connections>
                         <outlet property="falseButton" destination="tbn-vQ-GyC" id="9Ij-mM-kDs"/>
                         <outlet property="progressBar" destination="TXm-qh-7Xg" id="pSZ-oh-OCT"/>
-                        <outlet property="queestionLabel" destination="Qaf-PQ-vLV" id="YWW-0Z-WlF"/>
+                        <outlet property="questionLabel" destination="Qaf-PQ-vLV" id="YWW-0Z-WlF"/>
                         <outlet property="trueButton" destination="oVw-Hl-IRe" id="p2a-UA-CRb"/>
                     </connections>
                 </viewController>
