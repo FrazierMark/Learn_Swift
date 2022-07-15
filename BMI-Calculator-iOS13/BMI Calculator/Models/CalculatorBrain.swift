@@ -22,7 +22,7 @@ struct CalculatorBrain {
     }
     
     func getColor() -> UIColor {
-        return bmi?.color ?? #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        return bmi?.color ?? #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1) // Using optional chaining. Only when there is a bmi value do we change the color
     }
     
     mutating func calculateBMI(height: Float, weight: Float) {
