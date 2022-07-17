@@ -42,39 +42,66 @@ enum Identifiers {
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
   var window: UIWindow?
-  let notificationCenter = UNUserNotificationCenter.current()
 
   func application(
     _ application: UIApplication,
     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
   ) -> Bool {
-    notificationCenter.delegate = self
     UITabBar.appearance().barTintColor = UIColor.themeGreenColor
     UITabBar.appearance().tintColor = UIColor.white
     
-    // ensures the app will attempt to register for push notifications anytime it's launched
-    registerForPushNotifications()
+    // register push notification registration process with Apple Push Notification service
+    registerForPushNotifications(application: application) {
+        DispatchQueue.global(qos: .background).asyncAfter(deadline: .now() + 1) {
+        }
+    }
 
 
     return true
   }
 }
 
-func registerForPushNotifications(completionHandler: @escaping ()->() = {}) {
+// Register push notification registration process with Apple Push Notification service
+func registerForPushNotifications(application: UIApplication, completionHandler: @escaping ()->() = {}) {
     let center = UNUserNotificationCenter.current()
 
     //Ask for user permission
-    center.requestAuthorization(options: [.badge, .sound, .alert]) { [weak self] granted, _ in
+    center.requestAuthorization(options: [.badge, .sound, .alert]) { granted, _ in
         defer { completionHandler() }
         guard granted else { return }
-
-        center.delegate = self
 
         DispatchQueue.main.async {
             application.registerForRemoteNotifications()
         }
     }
 }
+
+
+
+// Tells the delegate that the app successfully registered with Apple Push Notification service (APNs).
+// deviceToken is received from Apple Push Notification service
+func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+    let tokenParts = deviceToken.map { data in String(format: "%02.2hhx", data) }
+    let token = tokenParts.joined()
+    print("Device Token: \(token)")
+
+}
+
+// Tells the delegate that the app failed to register with Apple Push Notification service (APNs).
+func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
+    print("Failed to register for remote notifications: \(error)")
+}
+
+// MARK: - Handle Push Notification Interactions
+// Receiving Notifications
+// Delegate method to handle a notification that arrived while the app was running in the foreground.
+func userNotificationCenter(_ center: UNUserNotificationCenter,
+                            willPresent notification: UNNotification,
+                            withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+    completionHandler([.alert, .sound, .badge])
+}
+
+
 
 // returns the settings the users has granted
 func getNotificationSettings() {
