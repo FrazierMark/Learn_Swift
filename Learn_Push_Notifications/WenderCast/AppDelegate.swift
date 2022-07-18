@@ -55,11 +55,46 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         DispatchQueue.global(qos: .background).asyncAfter(deadline: .now() + 1) {
         }
     }
+    
+    // Check if launched from notification ()
+    let notificationOption = launchOptions?[.remoteNotification]
 
-
+    // 1
+    if
+      let notification = notificationOption as? [String: AnyObject],
+      
+      // notification dictionary exists
+      let aps = notification["aps"] as? [String: AnyObject] {
+      // 2
+      NewsItem.makeNewsItem(aps)
+      
+      // 3 - Change the selected tab of the tab controller to the News section
+      (window?.rootViewController as? UITabBarController)?.selectedIndex = 1
+    }
     return true
   }
-}
+  
+  // Handles situation where app is running when a push notification is received
+  func application(
+    _ application: UIApplication,
+    // attempts to extract the aps from the supplied userInfo object and if so creates a new NewsItem from it
+    didReceiveRemoteNotification userInfo: [AnyHashable: Any],
+    fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void
+  ) {
+    guard let aps = userInfo["aps"] as? [String: AnyObject] else {
+      completionHandler(.failed)
+      return
+    }
+    if aps["content-available"] as? Int == 1 {
+      let podcastStore = PodcastStore.sharedStore
+      podcastStore.refreshItems { didLoadNewItems in
+        completionHandler(didLoadNewItems ? .newData : .noData)
+      }
+    } else {
+      NewsItem.makeNewsItem(aps)
+      completionHandler(.newData)
+    }
+  }
 
 // Register push notification registration process with Apple Push Notification service
 func registerForPushNotifications(application: UIApplication, completionHandler: @escaping ()->() = {}) {
@@ -98,9 +133,8 @@ func application(_ application: UIApplication, didFailToRegisterForRemoteNotific
 func userNotificationCenter(_ center: UNUserNotificationCenter,
                             willPresent notification: UNNotification,
                             withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-    completionHandler([.alert, .sound, .badge])
+  completionHandler([.banner, .list, .sound, .badge])
 }
-
 
 
 // returns the settings the users has granted
@@ -108,4 +142,6 @@ func getNotificationSettings() {
   UNUserNotificationCenter.current().getNotificationSettings { settings in
     print("Notification settings: \(settings)")
   }
+}
+
 }
