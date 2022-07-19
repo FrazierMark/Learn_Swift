@@ -19,6 +19,7 @@ class DetailInterfaceController: WKInterfaceController {
     @IBOutlet weak var selectButton: WKInterfaceButton!
     @IBAction func doSelectButton() {
         SelectedItem.current.selected = item
+        // Dismiss controller
         pop()
         
     }

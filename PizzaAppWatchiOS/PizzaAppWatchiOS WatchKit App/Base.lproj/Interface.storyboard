@@ -15,32 +15,55 @@
                         <label alignment="left" text="Label" id="zET-TB-AsK"/>
                         <table alignment="left" id="rc2-eG-BHL">
                             <items>
-                                <tableRow id="FDR-Gp-1sh">
+                                <tableRow identifier="row" id="FDR-Gp-1sh" customClass="RowController" customModule="PizzaAppWatchiOS_WatchKit_Extension">
                                     <group key="rootItem" width="1" alignment="left" id="Hlp-Ya-f5t">
                                         <items>
-                                            <imageView width="30" height="20" alignment="left" image="pencil.circle" catalog="system" id="7Kf-OB-Q6i"/>
-                                            <label alignment="left" text="Label" id="9Jx-Cj-v0k"/>
+                                            <imageView width="30" height="20" alignment="left" verticalAlignment="center" image="pencil.circle" catalog="system" id="7Kf-OB-Q6i"/>
+                                            <label alignment="left" verticalAlignment="center" text="Label" id="9Jx-Cj-v0k"/>
                                         </items>
                                     </group>
+                                    <connections>
+                                        <outlet property="image" destination="7Kf-OB-Q6i" id="F1h-DW-qQ9"/>
+                                        <outlet property="label" destination="9Jx-Cj-v0k" id="yE2-1w-s7N"/>
+                                    </connections>
                                 </tableRow>
                             </items>
                         </table>
-                        <button width="1" alignment="left" title="Clear" id="jQu-ti-Z3c"/>
+                        <button width="1" alignment="left" title="Clear" id="jQu-ti-Z3c">
+                            <connections>
+                                <action selector="doClearSelection" destination="AgC-eL-Hgc" id="aYT-n5-FHf"/>
+                            </connections>
+                        </button>
                     </items>
+                    <connections>
+                        <outlet property="clearSelection" destination="jQu-ti-Z3c" id="nhP-eH-9m8"/>
+                        <outlet property="selectedItemLabel" destination="zET-TB-AsK" id="djP-V2-jZo"/>
+                        <outlet property="table" destination="rc2-eG-BHL" id="o9F-l7-tcY"/>
+                    </connections>
                 </controller>
             </objects>
             <point key="canvasLocation" x="129" y="29"/>
         </scene>
-        <!--Interface Controller-->
+        <!--DetailController-->
         <scene sceneID="NRi-HX-BPN">
             <objects>
-                <controller id="NWn-66-lhi">
+                <controller identifier="DetailController" id="NWn-66-lhi" customClass="DetailInterfaceController" customModule="PizzaAppWatchiOS_WatchKit_Extension">
                     <items>
                         <label alignment="left" text="Label" id="vpM-cR-nfx"/>
                         <imageView alignment="left" image="pencil" catalog="system" id="Mx7-Hv-z62"/>
-                        <label alignment="left" text="Label" id="BZ7-3y-rw2"/>
-                        <button width="1" alignment="left" title="Order" id="eTR-9I-uTU"/>
+                        <label alignment="left" text="Label" numberOfLines="0" id="BZ7-3y-rw2"/>
+                        <button width="1" alignment="left" title="Select" id="eTR-9I-uTU">
+                            <connections>
+                                <action selector="doSelectButton" destination="NWn-66-lhi" id="lai-03-TLh"/>
+                            </connections>
+                        </button>
                     </items>
+                    <connections>
+                        <outlet property="itemDescription" destination="BZ7-3y-rw2" id="3ph-pr-6Os"/>
+                        <outlet property="itemImage" destination="Mx7-Hv-z62" id="GQO-Mb-Bgy"/>
+                        <outlet property="itemName" destination="vpM-cR-nfx" id="eJA-tg-Rah"/>
+                        <outlet property="selectButton" destination="eTR-9I-uTU" id="sHc-AS-jFn"/>
+                    </connections>
                 </controller>
             </objects>
             <point key="canvasLocation" x="371" y="29"/>

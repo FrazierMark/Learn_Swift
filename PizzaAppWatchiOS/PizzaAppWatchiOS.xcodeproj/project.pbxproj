@@ -121,10 +121,10 @@
 		675394C3288710DD00A31BF0 /* PizzaAppWatchiOS WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
-				675394C4288710DD00A31BF0 /* InterfaceController.swift */,
-				675394C6288710DD00A31BF0 /* ExtensionDelegate.swift */,
 				675394DD2887223D00A31BF0 /* DetailInterfaceController.swift */,
 				675394DE2887223D00A31BF0 /* MenuModel.swift */,
+				675394C4288710DD00A31BF0 /* InterfaceController.swift */,
+				675394C6288710DD00A31BF0 /* ExtensionDelegate.swift */,
 				675394C8288710DD00A31BF0 /* NotificationController.swift */,
 				675394CA288710DD00A31BF0 /* ComplicationController.swift */,
 				675394CC288710DD00A31BF0 /* Assets.xcassets */,
