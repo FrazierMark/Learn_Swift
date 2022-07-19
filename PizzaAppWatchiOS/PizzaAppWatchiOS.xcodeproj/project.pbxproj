@@ -18,6 +18,7 @@
 		675394CD288710DD00A31BF0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 675394CC288710DD00A31BF0 /* Assets.xcassets */; };
 		675394DF2887223D00A31BF0 /* DetailInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 675394DD2887223D00A31BF0 /* DetailInterfaceController.swift */; };
 		675394E02887223D00A31BF0 /* MenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 675394DE2887223D00A31BF0 /* MenuModel.swift */; };
+		675394E22887366900A31BF0 /* RatingsInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 675394E12887366900A31BF0 /* RatingsInterfaceController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,7 @@
 		675394CF288710DD00A31BF0 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 		675394DD2887223D00A31BF0 /* DetailInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailInterfaceController.swift; sourceTree = "<group>"; };
 		675394DE2887223D00A31BF0 /* MenuModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuModel.swift; sourceTree = "<group>"; };
+		675394E12887366900A31BF0 /* RatingsInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingsInterfaceController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				675394DD2887223D00A31BF0 /* DetailInterfaceController.swift */,
+				675394E12887366900A31BF0 /* RatingsInterfaceController.swift */,
 				675394DE2887223D00A31BF0 /* MenuModel.swift */,
 				675394C4288710DD00A31BF0 /* InterfaceController.swift */,
 				675394C6288710DD00A31BF0 /* ExtensionDelegate.swift */,
@@ -264,6 +267,7 @@
 				675394C9288710DD00A31BF0 /* NotificationController.swift in Sources */,
 				675394CB288710DD00A31BF0 /* ComplicationController.swift in Sources */,
 				675394E02887223D00A31BF0 /* MenuModel.swift in Sources */,
+				675394E22887366900A31BF0 /* RatingsInterfaceController.swift in Sources */,
 				675394C7288710DD00A31BF0 /* ExtensionDelegate.swift in Sources */,
 				675394C5288710DD00A31BF0 /* InterfaceController.swift in Sources */,
 				675394DF2887223D00A31BF0 /* DetailInterfaceController.swift in Sources */,

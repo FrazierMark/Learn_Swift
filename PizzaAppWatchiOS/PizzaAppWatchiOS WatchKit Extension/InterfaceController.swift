@@ -45,7 +45,9 @@ class InterfaceController: WKInterfaceController {
         clearSelection.setBackgroundColor(.red)
     }
     override func table(_ table: WKInterfaceTable, didSelectRowAt rowIndex: Int) {
-        pushController(withName: "DetailController", context: menu[rowIndex])
+        // pushController(withName: "DetailController", context: menu[rowIndex])
+        
+//        presentController(withName: "DetailController", context: menu[rowIndex])
     }
     
     // Runs everytime this view shows on the interface
@@ -56,6 +58,10 @@ class InterfaceController: WKInterfaceController {
     
     override func didDeactivate() {
         // This method is called when watch view controller is no longer visible
+    }
+    
+    override func contextForSegue(withIdentifier segueIdentifier: String, in table: WKInterfaceTable, rowIndex: Int) -> Any? {
+        return menu[rowIndex]
     }
 
 }

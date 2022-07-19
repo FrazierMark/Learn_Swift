@@ -20,15 +20,21 @@ class DetailInterfaceController: WKInterfaceController {
     @IBAction func doSelectButton() {
         SelectedItem.current.selected = item
         // Dismiss controller
-        pop()
+        // pop()
+        
+        dismiss()
         
     }
    
+    @IBAction func showRatings() {
+        pushController(withName: "RatingsInterfaceController", context: item)
+    }
+    
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         // Configure interface objects here.
         if  let menuItem = context as? MenuItem{
-            itemDescription.setText(menuItem.description)
+            // itemDescription.setText(menuItem.description)
             itemName.setText(menuItem.name)
             itemImage.setImageNamed("\(menuItem.id)_100w")
             item = menuItem

@@ -1,0 +1,6 @@
+framework module AEPSampleExtensionSwift {
+  umbrella header "AEPSampleExtensionSwift-umbrella.h"
+
+  export *
+  module * { export * }
+}

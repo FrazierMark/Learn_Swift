@@ -13,7 +13,7 @@
                     <items>
                         <label width="1" alignment="left" text="Twin Pizza" textAlignment="center" minimumScaleFactor="0.84999999999999998" id="aoO-WV-sWm"/>
                         <label alignment="left" text="Label" id="zET-TB-AsK"/>
-                        <table alignment="left" id="rc2-eG-BHL">
+                        <table alignment="left" pagingScroll="YES" id="rc2-eG-BHL">
                             <items>
                                 <tableRow identifier="row" id="FDR-Gp-1sh" customClass="RowController" customModule="PizzaAppWatchiOS_WatchKit_Extension">
                                     <group key="rootItem" width="1" alignment="left" id="Hlp-Ya-f5t">
@@ -25,6 +25,7 @@
                                     <connections>
                                         <outlet property="image" destination="7Kf-OB-Q6i" id="F1h-DW-qQ9"/>
                                         <outlet property="label" destination="9Jx-Cj-v0k" id="yE2-1w-s7N"/>
+                                        <segue destination="NWn-66-lhi" kind="push" id="fT7-f0-lbU"/>
                                     </connections>
                                 </tableRow>
                             </items>
@@ -51,15 +52,18 @@
                     <items>
                         <label alignment="left" text="Label" id="vpM-cR-nfx"/>
                         <imageView alignment="left" image="pencil" catalog="system" id="Mx7-Hv-z62"/>
-                        <label alignment="left" text="Label" numberOfLines="0" id="BZ7-3y-rw2"/>
                         <button width="1" alignment="left" title="Select" id="eTR-9I-uTU">
                             <connections>
                                 <action selector="doSelectButton" destination="NWn-66-lhi" id="lai-03-TLh"/>
                             </connections>
                         </button>
+                        <button width="1" alignment="left" title="Ratings" id="0oy-kp-HeB">
+                            <connections>
+                                <action selector="showRatings" destination="NWn-66-lhi" id="ww1-sA-NdA"/>
+                            </connections>
+                        </button>
                     </items>
                     <connections>
-                        <outlet property="itemDescription" destination="BZ7-3y-rw2" id="3ph-pr-6Os"/>
                         <outlet property="itemImage" destination="Mx7-Hv-z62" id="GQO-Mb-Bgy"/>
                         <outlet property="itemName" destination="vpM-cR-nfx" id="eJA-tg-Rah"/>
                         <outlet property="selectButton" destination="eTR-9I-uTU" id="sHc-AS-jFn"/>
@@ -67,6 +71,22 @@
                 </controller>
             </objects>
             <point key="canvasLocation" x="371" y="29"/>
+        </scene>
+        <!--Ratings-->
+        <scene sceneID="VeN-Rw-TLp">
+            <objects>
+                <controller identifier="RatingsInterfaceController" title="Ratings" id="q43-ca-VrL" customClass="RatingsInterfaceController" customModule="PizzaAppWatchiOS_WatchKit_Extension">
+                    <items>
+                        <label width="1" alignment="left" text="Label" textAlignment="center" id="Nag-y0-TNY"/>
+                        <label alignment="left" text="Label" numberOfLines="0" id="z5M-fH-7xM"/>
+                    </items>
+                    <connections>
+                        <outlet property="itemDescription" destination="z5M-fH-7xM" id="cFE-Tt-liD"/>
+                        <outlet property="itemRatings" destination="Nag-y0-TNY" id="Vgh-aY-PLh"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="611" y="29"/>
         </scene>
         <!--Static Notification Interface Controller-->
         <scene sceneID="AEw-b0-oYE">
