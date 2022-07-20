@@ -1,0 +1,45 @@
+# Uncomment the next line to define a global platform for your project
+platform :ios, '13.5'
+
+target 'AEPSampleWatchApp' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  #use_frameworks!
+
+  # Pods for AEPSampleWatchApp
+
+end
+
+target 'AEPSampleWatchApp WatchKit App' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  #use_frameworks!
+   
+  # Pods for AEPSampleWatchApp WatchKit App
+
+end
+
+target 'AEPSampleWatchApp WatchKit Extension' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  #use_frameworks!
+
+  # Pods for AEPSampleWatchApp WatchKit Extension
+    pod 'Alamofire'
+    pod 'SwiftyJSON'
+    pod 'AEPCore', '~> 3'
+    pod 'AEPEdge', '~> 1'
+    pod 'AEPUserProfile', '~> 3'
+    pod 'AEPAssurance', '~> 3'
+    pod 'AEPServices', '~> 3'
+    pod 'AEPEdgeConsent', '~> 1'
+    pod 'AEPLifecycle', '~>3'
+    pod 'AEPMessaging', '~>1'
+    pod 'AEPEdgeIdentity', '~>1'
+    pod 'AEPSignal', '~>3'
+
+end
+
+post_install do |installer|
+  installer.pods_project.build_configurations.each do |config|
+    config.build_settings["EXCLUDED_ARCHS[sdk=iphonesimulator*]"] = "arm64"
+  end
+end
+
