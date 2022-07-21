@@ -1,0 +1,31 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '10.0'
+
+target 'AEPSampleWatchOSApp' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for AEPSampleWatchOSApp
+
+end
+
+target 'AEPSampleWatchOSApp WatchKit App' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for AEPSampleWatchOSApp WatchKit App
+
+end
+
+target 'AEPSampleWatchOSApp WatchKit Extension' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for AEPSampleWatchOSApp WatchKit Extension
+  pod 'AEPServices', :git => 'https://github.com/FrazierMark/aepsdk-test.git'
+  pod 'AEPCore', :git => 'https://github.com/FrazierMark/aepsdk-test.git'
+  pod 'AEPLifecycle', :git => 'https://github.com/FrazierMark/aepsdk-test.git'
+  pod 'AEPIdentity', :git => 'https://github.com/FrazierMark/aepsdk-test.git'
+  pod 'AEPSignal', :git => 'https://github.com/FrazierMark/aepsdk-test.git'
+  pod 'AEPRulesEngine', :git => 'https://github.com/FrazierMark/aepsdk-rulesengine-ios.git'
+end
