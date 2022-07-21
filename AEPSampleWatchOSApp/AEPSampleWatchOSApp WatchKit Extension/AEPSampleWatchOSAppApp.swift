@@ -9,6 +9,10 @@ import SwiftUI
 
 @main
 struct AEPSampleWatchOSAppApp: App {
+    
+    @WKExtensionDelegateAdaptor(ExtensionDelegate.self)
+   private var extensionDelegate
+    
     @SceneBuilder var body: some Scene {
         WindowGroup {
             NavigationView {

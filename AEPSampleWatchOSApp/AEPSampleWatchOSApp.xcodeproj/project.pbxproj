@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		671E07242889DE2700A9ABC6 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 671E07232889DE2700A9ABC6 /* ExtensionDelegate.swift */; };
 		677EC75B2888C52C008B97B1 /* AEPSampleWatchOSApp WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 677EC75A2888C52C008B97B1 /* AEPSampleWatchOSApp WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		677EC7602888C52C008B97B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 677EC75F2888C52C008B97B1 /* Assets.xcassets */; };
 		677EC7662888C52C008B97B1 /* AEPSampleWatchOSApp WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 677EC7652888C52C008B97B1 /* AEPSampleWatchOSApp WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -62,6 +63,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		671E07232889DE2700A9ABC6 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		671E07DC2889E47400A9ABC6 /* AEPCore */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = AEPCore; path = ../../../../Desktop/AEPCore; sourceTree = "<group>"; };
 		677EC7562888C52C008B97B1 /* AEPSampleWatchOSApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AEPSampleWatchOSApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		677EC75A2888C52C008B97B1 /* AEPSampleWatchOSApp WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AEPSampleWatchOSApp WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		677EC75F2888C52C008B97B1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -102,9 +105,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		671E07DB2889E47400A9ABC6 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				671E07DC2889E47400A9ABC6 /* AEPCore */,
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
 		677EC74F2888C52C008B97B1 = {
 			isa = PBXGroup;
 			children = (
+				671E07DB2889E47400A9ABC6 /* Packages */,
 				677EC75E2888C52C008B97B1 /* AEPSampleWatchOSApp WatchKit App */,
 				677EC7692888C52C008B97B1 /* AEPSampleWatchOSApp WatchKit Extension */,
 				677EC7572888C52C008B97B1 /* Products */,
@@ -137,6 +149,7 @@
 				677EC76E2888C52C008B97B1 /* NotificationController.swift */,
 				677EC7702888C52C008B97B1 /* NotificationView.swift */,
 				677EC7722888C52C008B97B1 /* ComplicationController.swift */,
+				671E07232889DE2700A9ABC6 /* ExtensionDelegate.swift */,
 				677EC7742888C52D008B97B1 /* Assets.xcassets */,
 				677EC7792888C52D008B97B1 /* Info.plist */,
 				677EC77A2888C52D008B97B1 /* PushNotificationPayload.apns */,
@@ -239,6 +252,8 @@
 				Base,
 			);
 			mainGroup = 677EC74F2888C52C008B97B1;
+			packageReferences = (
+			);
 			productRefGroup = 677EC7572888C52C008B97B1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -284,6 +299,7 @@
 			files = (
 				677EC76F2888C52C008B97B1 /* NotificationController.swift in Sources */,
 				677EC76D2888C52C008B97B1 /* ContentView.swift in Sources */,
+				671E07242889DE2700A9ABC6 /* ExtensionDelegate.swift in Sources */,
 				677EC7732888C52C008B97B1 /* ComplicationController.swift in Sources */,
 				677EC76B2888C52C008B97B1 /* AEPSampleWatchOSAppApp.swift in Sources */,
 				677EC7712888C52C008B97B1 /* NotificationView.swift in Sources */,
