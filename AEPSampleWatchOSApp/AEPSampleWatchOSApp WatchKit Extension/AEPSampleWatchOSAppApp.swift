@@ -10,7 +10,7 @@ import SwiftUI
 @main
 struct AEPSampleWatchOSAppApp: App {
     
-    @WKExtensionDelegateAdaptor(ExtensionDelegate.self)
+    @WKApplicationDelegateAdaptor(ExtensionDelegate.self)
    private var extensionDelegate
     
     @SceneBuilder var body: some Scene {
