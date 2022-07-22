@@ -22,4 +22,5 @@ struct AEPSampleWatchOSAppApp: App {
 
         WKNotificationScene(controller: NotificationController.self, category: "myCategory")
     }
+
 }
