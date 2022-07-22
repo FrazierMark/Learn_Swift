@@ -18,6 +18,11 @@
 		677EC7732888C52C008B97B1 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 677EC7722888C52C008B97B1 /* ComplicationController.swift */; };
 		677EC7752888C52D008B97B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 677EC7742888C52D008B97B1 /* Assets.xcassets */; };
 		677EC7782888C52D008B97B1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 677EC7772888C52D008B97B1 /* Preview Assets.xcassets */; };
+		67FDC510288B2D360097EADB /* AEPCore in Frameworks */ = {isa = PBXBuildFile; productRef = 67FDC50F288B2D360097EADB /* AEPCore */; };
+		67FDC512288B2D360097EADB /* AEPIdentity in Frameworks */ = {isa = PBXBuildFile; productRef = 67FDC511288B2D360097EADB /* AEPIdentity */; };
+		67FDC514288B2D360097EADB /* AEPLifecycle in Frameworks */ = {isa = PBXBuildFile; productRef = 67FDC513288B2D360097EADB /* AEPLifecycle */; };
+		67FDC516288B2D360097EADB /* AEPServices in Frameworks */ = {isa = PBXBuildFile; productRef = 67FDC515288B2D360097EADB /* AEPServices */; };
+		67FDC518288B2D360097EADB /* AEPSignal in Frameworks */ = {isa = PBXBuildFile; productRef = 67FDC517288B2D360097EADB /* AEPSignal */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +97,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				67FDC510288B2D360097EADB /* AEPCore in Frameworks */,
+				67FDC518288B2D360097EADB /* AEPSignal in Frameworks */,
+				67FDC516288B2D360097EADB /* AEPServices in Frameworks */,
+				67FDC512288B2D360097EADB /* AEPIdentity in Frameworks */,
+				67FDC514288B2D360097EADB /* AEPLifecycle in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -120,6 +130,7 @@
 				677EC75E2888C52C008B97B1 /* AEPSampleWatchOSApp WatchKit App */,
 				677EC7692888C52C008B97B1 /* AEPSampleWatchOSApp WatchKit Extension */,
 				677EC7572888C52C008B97B1 /* Products */,
+				67FDC50E288B2D360097EADB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -164,6 +175,13 @@
 				677EC7772888C52D008B97B1 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		67FDC50E288B2D360097EADB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -218,6 +236,13 @@
 			dependencies = (
 			);
 			name = "AEPSampleWatchOSApp WatchKit Extension";
+			packageProductDependencies = (
+				67FDC50F288B2D360097EADB /* AEPCore */,
+				67FDC511288B2D360097EADB /* AEPIdentity */,
+				67FDC513288B2D360097EADB /* AEPLifecycle */,
+				67FDC515288B2D360097EADB /* AEPServices */,
+				67FDC517288B2D360097EADB /* AEPSignal */,
+			);
 			productName = "AEPSampleWatchOSApp WatchKit Extension";
 			productReference = 677EC7652888C52C008B97B1 /* AEPSampleWatchOSApp WatchKit Extension.appex */;
 			productType = "com.apple.product-type.watchkit2-extension";
@@ -614,6 +639,29 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		67FDC50F288B2D360097EADB /* AEPCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = AEPCore;
+		};
+		67FDC511288B2D360097EADB /* AEPIdentity */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = AEPIdentity;
+		};
+		67FDC513288B2D360097EADB /* AEPLifecycle */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = AEPLifecycle;
+		};
+		67FDC515288B2D360097EADB /* AEPServices */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = AEPServices;
+		};
+		67FDC517288B2D360097EADB /* AEPSignal */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = AEPSignal;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 677EC7502888C52C008B97B1 /* Project object */;
 }

@@ -10,9 +10,9 @@ import WatchKit
 import UserNotifications
 
 import AEPCore
-import AEPEdge
-import AEPEdgeIdentity
-import AEPMessaging
+//import AEPEdge
+//import AEPEdgeIdentity
+//import AEPMessaging
 
 
 // 1
